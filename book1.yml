@@ -39,8 +39,8 @@
   - name: Specifying a destination path
 #    fetch:
     synchronize:
-      src: /tmp/calculator-servlet-example/target/mycalcwebapp.war
-      dest: /tmp/calculator-servlet-example/
+      src: /tmp/calculator-servlet-example/
+      dest: /tmp/calculator-servlet-example/target/mycalcwebapp.war
 #      flat: yes
       when: not result.stat.exists 
 
