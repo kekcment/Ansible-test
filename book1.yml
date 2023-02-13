@@ -1,5 +1,5 @@
 ---
-- name: install maven
+- name: install war.file
   hosts: web
   become: yes
 
@@ -35,3 +35,23 @@
       src: /tmp/calculator-servlet-example/target/mycalcwebapp.war
       dest: /tmp/calculator-servlet-example/
       flat: yes
+
+- name: war prodaction
+  hosts: db
+  become: yes
+
+  tasks: 
+  - name: Ensure tomcat package is present
+    apt: 
+      name: tomcat
+      state: present
+
+  - name: Ensure default-jdk  package is present
+    apt: 
+      name: default-jdk
+      state: present
+
+  - name: Copy war file
+    copy:
+      src: /tmp/calculator-servlet-example/mycalcwebapp.war
+      dest: /data:/usr/local/tomcat/webapps/  
