@@ -54,4 +54,4 @@
   - name: Copy war file
     copy:
       src: /tmp/calculator-servlet-example/mycalcwebapp.war
-      dest: /data:/usr/local/tomcat/webapps/  
+      dest: /usr/local/tomcat/webapps/  
