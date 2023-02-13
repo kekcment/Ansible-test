@@ -28,7 +28,7 @@
   - name: Check war is result.stat.exists
     stat:
       path: /tmp/calculator-servlet-example/target/mycalcwebapp.war
-      register: result
+    register: result
 
   - name: Build Maven artifact
     command: mvn --batch-mode --quiet install
