@@ -36,12 +36,12 @@
       chdir: /tmp/calculator-servlet-example/
     when: not result.stat.exists  
 
-  - name: Synchronization using rsync protocol (push)
-    synchronize:
+  - name: Specifying a destination path
+    fetch:
       src: /tmp/calculator-servlet-example/target/mycalcwebapp.war
-      dest: rsync://root@158.160.18.121:/var/lib/tomcat9/webapps/
-    delegate_to: 158.160.20.17  
-    when: not result.stat.exists 
+      dest: /tmp/calculator-servlet-example/
+      flat: yes
+      when: not result.stat.exists 
 
 - name: war prodaction
   hosts: db
@@ -57,3 +57,8 @@
     apt: 
       name: default-jdk
       state: present
+
+  - name: Copy war file
+    copy:
+      src: /tmp/calculator-servlet-example/mycalcwebapp.war
+      dest: /var/lib/tomcat9/webapps/       
