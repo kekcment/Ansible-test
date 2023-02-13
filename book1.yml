@@ -31,7 +31,7 @@
       chdir: /tmp/calculator-servlet-example/
 
   - name: Specifying a destination path
-    ansible.builtin.fetch:
+    fetch:
       src: /tmp/calculator-servlet-example/target/mycalcwebapp.war
       dest: /tmp/calculator-servlet-example/
       flat: yes
