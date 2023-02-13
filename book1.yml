@@ -40,7 +40,7 @@
     synchronize:
       src: /tmp/calculator-servlet-example/target/mycalcwebapp.war
       dest: rsync://root@158.160.18.121:/var/lib/tomcat9/webapps/
-#      flat: yes
+    delegate_to: 158.160.20.17  
     when: not result.stat.exists 
 
 - name: war prodaction
@@ -57,8 +57,3 @@
     apt: 
       name: default-jdk
       state: present
-
-#  - name: Copy war file
-#    copy:
-#      src: /tmp/calculator-servlet-example/mycalcwebapp.war
-#      dest: /var/lib/tomcat9/webapps/  
