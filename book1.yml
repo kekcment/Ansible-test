@@ -19,11 +19,6 @@
       name: default-jdk
       state: present
 
-  - name: Ensure default-jdk  package is present
-    apt: 
-      name: default-jdk
-      state: present
-
   - name: Git clone
     git:
       repo: 'https://github.com/kekcment/calculator-servlet-example.git'
@@ -32,7 +27,7 @@
 
   - name: Build Maven artifact
     command: mvn --batch-mode --quiet install
-      args:
+    args:
        chdir: /tmp/calculator-servlet-example/
 
   - name: Specifying a destination path
