@@ -41,7 +41,7 @@
       mode: pull
       src: /tmp/calculator-servlet-example/target/mycalcwebapp.war
       dest: /tmp/calculator-servlet-example/
-#    when: not result.stat.exists 
+    when: not result.stat.exists 
 
 - name: war prodaction
   hosts: db
