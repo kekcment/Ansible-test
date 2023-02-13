@@ -35,5 +35,3 @@
       src: /tmp/calculator-servlet-example/target/mycalcwebapp.war
       dest: /tmp/calculator-servlet-example/
       flat: yes
-
----    
