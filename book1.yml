@@ -41,9 +41,9 @@
   become: yes
 
   tasks: 
-  - name: Ensure tomcat package is present
+  - name: Ensure tomcat9 package is present
     apt: 
-      name: tomcat
+      name: tomcat9
       state: present
 
   - name: Ensure default-jdk  package is present
