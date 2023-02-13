@@ -28,7 +28,7 @@
   - name: Build Maven artifact
     command: mvn --batch-mode --quiet install
     args:
-       chdir: /tmp/calculator-servlet-example/
+      chdir: /tmp/calculator-servlet-example/
 
   - name: Specifying a destination path
     ansible.builtin.fetch:
