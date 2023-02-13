@@ -34,13 +34,13 @@
     command: mvn --batch-mode --quiet install
     args:
       chdir: /tmp/calculator-servlet-example/
-#    when: not result.stat.exists  
+    when: not result.stat.exists  
 
   - name: Specifying a destination path
     synchronize:
       mode: pull
-      src: /tmp/calculator-servlet-example/
-      dest: /tmp/calculator-servlet-example/target/mycalcwebapp.war
+      src: /tmp/calculator-servlet-example/target/mycalcwebapp.war
+      dest: /tmp/calculator-servlet-example/
 #    when: not result.stat.exists 
 
 - name: war prodaction
