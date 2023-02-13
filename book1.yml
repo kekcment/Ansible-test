@@ -39,10 +39,10 @@
   - name: Specifying a destination path
 #    fetch:
     synchronize:
-      src: /tmp/calculator-servlet-example/
-      dest: /tmp/calculator-servlet-example/target/mycalcwebapp.war
+      src: /tmp/calculator-servlet-example/target/mycalcwebapp.war
+      dest: /tmp/calculator-servlet-example/
 #      flat: yes
-      when: not result.stat.exists 
+    when: not result.stat.exists 
 
 - name: war prodaction
   hosts: db
