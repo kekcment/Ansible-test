@@ -26,19 +26,19 @@
 
   - name: Git clone
     git:
-    repo: 'https://github.com/kekcment/calculator-servlet-example.git'
-    dest: /tmp/calculator-servlet-example
-    clone: yes
+      repo: 'https://github.com/kekcment/calculator-servlet-example.git'
+      dest: /tmp/calculator-servlet-example
+      clone: yes
 
   - name: Build Maven artifact
     command: mvn --batch-mode --quiet install
-    args:
-     chdir: /tmp/calculator-servlet-example/
+      args:
+       chdir: /tmp/calculator-servlet-example/
 
   - name: Specifying a destination path
     ansible.builtin.fetch:
-    src: /tmp/calculator-servlet-example/target/mycalcwebapp.war
-    dest: /tmp/calculator-servlet-example/
-    flat: yes
+      src: /tmp/calculator-servlet-example/target/mycalcwebapp.war
+      dest: /tmp/calculator-servlet-example/
+      flat: yes
 
 ---    
