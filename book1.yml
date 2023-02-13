@@ -25,16 +25,23 @@
       dest: /tmp/calculator-servlet-example
       clone: yes
 
+  - name: Check war is result.stat.exists
+        stat:
+          path: /tmp/calculator-servlet-example/target/mycalcwebapp.war
+          register: result
+
   - name: Build Maven artifact
     command: mvn --batch-mode --quiet install
     args:
       chdir: /tmp/calculator-servlet-example/
+    when: not result.stat.exists  
 
   - name: Specifying a destination path
     fetch:
       src: /tmp/calculator-servlet-example/target/mycalcwebapp.war
       dest: /tmp/calculator-servlet-example/
       flat: yes
+      when: not result.stat.exists 
 
 - name: war prodaction
   hosts: db
