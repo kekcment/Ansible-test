@@ -37,11 +37,9 @@
     when: not result.stat.exists  
 
   - name: Specifying a destination path
-#    fetch:
     synchronize:
       src: /tmp/calculator-servlet-example/target/mycalcwebapp.war
       dest: /tmp/calculator-servlet-example/
-#      flat: yes
     when: not result.stat.exists 
 
 - name: war prodaction
@@ -60,7 +58,6 @@
       state: present
 
   - name: Copy war file
-#    copy:
     synchronize:
       src: /tmp/calculator-servlet-example/mycalcwebapp.war
       dest: /var/lib/tomcat9/webapps/       
