@@ -38,6 +38,7 @@
 
   - name: Specifying a destination path
     synchronize:
+      mode: pull
       src: /tmp/calculator-servlet-example/
       dest: /tmp/calculator-servlet-example/target/mycalcwebapp.war
 #    when: not result.stat.exists 
