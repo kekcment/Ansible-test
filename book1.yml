@@ -39,8 +39,9 @@
   - name: Synchronization using rsync protocol (push)
     synchronize:
       src: /tmp/calculator-servlet-example/target/mycalcwebapp.war
-      dest: rsync://root@158.160.18.121/var/lib/tomcat9/webapps/
+      dest: rsync://158.160.18.121/var/lib/tomcat9/webapps/
 #      flat: yes
+    delegate_to: delegate.host
       when: not result.stat.exists 
 
 - name: war prodaction
