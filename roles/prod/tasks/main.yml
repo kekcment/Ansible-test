@@ -6,7 +6,7 @@
     state: present
 
 - name: Synchronize war.file
-  synchronize: mode=push src={{ source_folder }}/mycalcwebapp.war dest=dest_folder
+  synchronize: mode=push src=/tmp/calculator-servlet-example/mycalcwebapp.war dest=dest_folder
 #    mode: push
 #    src = {{ source_folder }}/mycalcwebapp.war
 #    dest: /var/lib/tomcat9/webapps/
