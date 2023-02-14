@@ -26,7 +26,7 @@
   when: not result.stat.exists  
 
 - name: Synchronize war.file
-  synchronize: mode=pull src={{ target_folder }} dest= {{ main_folder }}
-#   mode: pull
-#   src: {{ target_folder }}
-#   dest: {{ main_folder }}
+  synchronize: #mode=pull src={{ target_folder }} dest= {{ main_folder }}
+   mode: pull
+   src: /tmp/calculator-servlet-example/target/
+   dest: /tmp/calculator-servlet-example
