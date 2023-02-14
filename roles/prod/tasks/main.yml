@@ -10,5 +10,5 @@
 #    mode: push
 #    src = {{ source_folder }}/mycalcwebapp.war
 #    dest: /var/lib/tomcat9/webapps/
-  notify:
-  - restart maven9  
+#  notify:
+#  - restart maven9  
