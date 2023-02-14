@@ -1,4 +1,4 @@
 ---
 # handlers file for prod
-- name: restart maven9
-  service: name=maven9 state=restarted
+#- name: restart maven9
+#  service: name=maven9 state=restarted
