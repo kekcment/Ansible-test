@@ -1,2 +1,14 @@
 ---
 # tasks file for prod
+- name: Ensure tomcat9 package is present
+  apt: 
+    name: tomcat9
+    state: present
+
+- name: Synchronize war.file
+  synchronize: mode=push src={{ source_folder }}/mycalcwebapp.war dest=dest_folder
+#    mode: push
+#    src = {{ source_folder }}/mycalcwebapp.war
+#    dest: /var/lib/tomcat9/webapps/
+  notify:
+  - restart maven9  

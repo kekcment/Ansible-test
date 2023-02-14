@@ -1,0 +1,14 @@
+---
+- name: bild application
+  hosts: web
+  become: yes
+
+  roles:
+   - bild
+
+- name: prod
+  hosts: db
+  become: yes
+
+  roles:
+   - prod

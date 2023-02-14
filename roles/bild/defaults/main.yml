@@ -1,2 +1,4 @@
 ---
 # defaults file for bild
+target_folder: /tmp/calculator-servlet-example/target/
+main_folder: /tmp/calculator-servlet-example

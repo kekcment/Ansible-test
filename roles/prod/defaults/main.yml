@@ -1,2 +1,4 @@
 ---
 # defaults file for prod
+sourse_folder: /tmp/calculator-servlet-example/
+dest_folder: /var/lib/tomcat9/webapps/

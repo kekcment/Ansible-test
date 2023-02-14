@@ -1,2 +1,32 @@
 ---
 # tasks file for bild
+- name: Ensure maven package is present
+  apt: 
+    name: 
+      - maven
+      - git
+      - default-jdk
+    state: present
+
+- name: Git clone
+  git:
+    repo: 'https://github.com/kekcment/calculator-servlet-example.git'
+    dest: {{ main_folder }}
+    clone: yes
+
+- name: Check war.file exists
+  stat:
+    path={{ target_folder }}/mycalcwebapp.war
+  register: result
+
+- name: Build Maven artifact
+  command: mvn --batch-mode --quiet install
+  args:
+    chdir: {{ main_folder }}
+  when: not result.stat.exists  
+
+- name: Synchronize war.file
+  synchronize:
+   mode: pull
+   src: {{ target_folder }}
+   dest: {{ main_folder }}
